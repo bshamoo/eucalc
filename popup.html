@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" type="text/css">
+    <title>EUCALC</title>
+  
+    <style>
+      html,body {
+        font-family: 'Robot', sans-serif;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        min-width: 400px;
+      }
+      .modal-title {
+        font-family: 'Robot', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #2D2D2D;
+      }
+      .input-text {
+        font-family: 'Robot', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #2D2D2D;
+      }
+      .version{
+        font-weight: 500;
+      }
+      sub {
+        font-size: 10px;
+        font-weight: 700;
+        color: #2D2D2D;
+      }
+      .modal-content {
+        padding: 0 0px;
+      }
+      #top-ans, select {
+        font-family: 'Robot', sans-serif;
+        font-size: 22px;
+        width: 100%;
+        padding: 8px 20px;
+        margin: 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: right;
+      }
+      #bottom-input-GCD, select {
+        font-family: 'Robot', sans-serif;
+        font-size: 18px;
+        width: 55%;
+        padding: 2px 14px;
+        margin: 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      #bottom-input-FME, select {
+        font-family: 'Robot', sans-serif;
+        font-size: 16px;
+        width: 100%;
+        padding: 2px 2px;
+        margin: 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      #bottom-ans, select {
+        font-family: 'Robot', sans-serif;
+        font-size: 18px;
+        width: 72.5%;
+        padding: 2px 14px;
+        margin: 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: right;
+      }
+      .blue{
+        color: #4285F4;
+      }
+      .green{
+        color: #0F9D58;
+      }
+      .yellow{
+        color: #F4B400;
+      }
+      .red{
+        color: #DB4437;
+      }
+      .btn-yellow{
+        color: #FFFFFF;
+        background-color: #F4B400;
+        font-weight: 600;
+      }
+      .btn-yellow:hover{
+        color: #FFFFFF;
+        background-color: #d39b00;
+      }
+      .btn-red{
+        color: #FFFFFF;
+        background-color: #DB4437;
+        font-weight: 600;
+      }
+      .btn-red:hover{
+        color: #FFFFFF;
+        background-color: #bd3c30;
+      }
+      .btn-gray{
+        color: #2D2D2D;
+        background-color: #D2D2D2;
+        font-weight: 600;
+      }
+      .btn-gray:hover{
+        color: #2D2D2D;
+        background-color: #bebebe;
+      }
+      .btn-green{
+        color: #FFFFFF;
+        background-color: #0F9D58;
+        font-weight: 600;
+      }
+      .btn-green:hover{
+        color: #FFFFFF;
+        background-color: #0d8d4f;
+      }
+      .btn-lightgray{
+        color: #2D2D2D;
+        background-color: #F1F1F1;
+        font-weight: 600;
+      }
+      .btn-lightgray:hover{
+        color: #2D2D2D;
+        background-color: #dad8d8;
+      }
+      .btn-blue{
+        color: #FFFFFF;
+        background-color: #4285F4;
+        font-weight: 700;
+      }
+      .btn-blue:hover{
+        color: #FFFFFF;
+        background-color: #3a76d6;
+      }
+      .btn-black{
+        background-color: #2D2D2D;
+        font-weight: 700;
+      }
+      .blue:hover{
+        color: #FFFFFF;
+        background-color: #4285F4;
+      }
+      .green:hover{
+        color: #FFFFFF;
+        background-color: #0F9D58;
+      }
+      .yellow:hover{
+        color: #FFFFFF;
+        background-color: #F4B400;
+      }
+      .red:hover{
+        color: #FFFFFF;
+        background-color: #DB4437;
+      }
+      .btn:focus,.btn:active {
+        outline: none !important;
+        box-shadow: none;
+      }
+      hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="modal-header">
+      <h6 class="modal-title"><img src="images/eucalc16.png" alt="" class="icon"> EUCALC<span class="version"> (1.0.0)</span></h6>
+    </div>
+    <div class="modal-content mx-0 my-0">
+      <div class="container-fluid answer my-3">
+        <div class="row align-items-center justify-content-center">
+          <div class="col"><input type="text" id="top-ans" name="top-ans" placeholder="0"></div>
+        </div>
+      </div>
+      <div class="container-fluid numbers mb-3">
+        <div class="row first align-items-center justify-content-center mb-1">
+          <div class="col text-center"><button type="button" class="btn btn-yellow btn-block">CE</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-red btn-block">(</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-red btn-block">)</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-red btn-block">!</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-gray btn-block">÷</button></div>
+        </div>
+        <div class="row second align-items-center justify-content-center mb-1">
+          <div class="col text-center"><button type="button" class="btn btn-green btn-block">%</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">7</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">8</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">9</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-gray btn-block">×</button></div>
+        </div>
+        <div class="row third align-items-center justify-content-center mb-1">
+          <div class="col text-center"><button type="button" class="btn btn-green btn-block">//</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">4</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">5</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">6</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-gray btn-block">-</button></div>
+        </div>
+        <div class="row fourth align-items-center justify-content-center mb-1">
+          <div class="col text-center"><button type="button" class="btn btn-green btn-block">√</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">1</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">2</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">3</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-gray btn-block">+</button></div>
+        </div>
+        <div class="row fifth align-items-center justify-content-center mb-3">
+          <div class="col text-center"><button type="button" class="btn btn-green btn-block">^</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">0</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">.</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">Ans</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-blue btn-block">=</button></div>
+        </div>
+        <hr>
+        <div class="row sixth align-items-center justify-content-center mt-3 mb-1">
+          <div class="col text-center"><button type="button" class="btn btn-black btn-block blue" id="btn-gcd">GCD</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-black btn-block red" id="btn-fme">Fast Mod Exp</button></div>
+        </div>
+        <div class="row seventh align-items-center justify-content-center">
+          <div class="col text-center"><button type="button" class="btn btn-black btn-block yellow" id="btn-bin">Int to Bin</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-black btn-block green" id="btn-hex">Int to Hex</button></div>
+        </div>
+        <div class="row bottom-int align-items-center justify-content-center" id="int"></div> <!--my-3-->
+        <div class="row bottom-eq align-items-center justify-content-center" id="eq"></div> <!--mb-2-->
+        <div class="row bottom-ans align-items-center justify-content-center" id="bot-ans"></div> <!--mb-3-->
+        <div class="row bottom-clear align-items-center justify-content-center" id="clear"></div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
