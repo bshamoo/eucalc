@@ -1,7 +1,7 @@
 {
   "name": "EUCALC",
   "version": "1.0.0",
-  "description": "Perform simple arithmetic, euclidean math, and conversions on integers.",
+  "description": "Perform simple arithmetic, Euclidean math, and conversions on integers.",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "background": {
     "scripts": ["background.js"],
