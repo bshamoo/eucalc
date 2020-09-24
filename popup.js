@@ -42,7 +42,7 @@ function addElements(btn_active) {
         document.getElementById("eq").innerHTML +=  
         '<div class="col text-center"><h6 class="input-text">=</h6></div>';
         document.getElementById("bot-ans").innerHTML +=  
-        '<div class="col text-center"><input type="text" id="bottom-ans" name="bottom-ans" placeholder="0"><sub> 16</sub></div>';
+        '<div class="col text-center"><input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" disabled><sub> 16</sub></div>';
         document.getElementById("clear").innerHTML +=  
         '<div class="col text-center"><button type="button" class="btn btn-gray">Clear</button></div>';
     }
@@ -63,7 +63,7 @@ function addElements(btn_active) {
         document.getElementById("eq").innerHTML +=  
         '<div class="col text-center"><h6 class="input-text">=</h6></div>';
         document.getElementById("bot-ans").innerHTML +=  
-        '<div class="col text-center"><input type="text" id="bottom-ans" name="bottom-ans" placeholder="0"><sub> 2</sub></div>';
+        '<div class="col text-center"><input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" disabled><sub> 2</sub></div>';
         document.getElementById("clear").innerHTML +=  
         '<div class="col text-center"><button type="button" class="btn btn-gray">Clear</button></div>';
     }
@@ -88,7 +88,7 @@ function addElements(btn_active) {
         document.getElementById("eq").innerHTML +=  
         '<div class="col text-center"><h6 class="input-text">=</h6></div>';
         document.getElementById("bot-ans").innerHTML +=  
-        '<div class="col text-center"><input type="text" id="bottom-ans" name="bottom-ans" placeholder="0"></div>';
+        '<div class="col text-center"><input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" disabled></div>';
         document.getElementById("clear").innerHTML +=  
         '<div class="col text-center"><button type="button" class="btn btn-gray">Clear</button></div>';
     }
@@ -117,7 +117,7 @@ function addElements(btn_active) {
         document.getElementById("eq").innerHTML +=  
         '<div class="col text-center"><h6 class="input-text">=</h6></div>';
         document.getElementById("bot-ans").innerHTML +=  
-        '<div class="col text-center"><input type="text" id="bottom-ans" name="bottom-ans" placeholder="0"></div>';
+        '<div class="col text-center"><input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" disabled></div>';
         document.getElementById("clear").innerHTML +=  
         '<div class="col text-center"><button type="button" class="btn btn-gray">Clear</button></div>';
     }

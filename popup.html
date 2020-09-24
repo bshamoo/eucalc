@@ -17,27 +17,43 @@
         font-size: 12px;
         margin: 0;
         padding: 0;
-        min-width: 400px;
+        min-width: 375px;
+      }
+      :root {
+        --black: #2D2D2D;
+        --gray: #D2D2D2;
+        --lightgray: #F1F1F1;
+        --white: #FFFFFF;
+        --blue: #4285F4;
+        --green: #0F9D58;
+        --yellow: #F4B400;
+        --red: #DB4437;
+        --gray-hover: #bebebe;
+        --lightgray-hover: #dad8d8;
+        --blue-hover: #3a76d6;
+        --green-hover: #0d8d4f;
+        --yellow-hover: #d39b00;
+        --red-hover: #bd3c30;
       }
       .modal-title {
         font-family: 'Robot', sans-serif;
         font-size: 18px;
         font-weight: 700;
-        color: #2D2D2D;
+        color: var(--black);
       }
       .input-text {
         font-family: 'Robot', sans-serif;
         font-size: 16px;
         font-weight: 700;
-        color: #2D2D2D;
+        color: var(--black);
       }
-      .version{
+      .version {
         font-weight: 500;
       }
       sub {
         font-size: 10px;
         font-weight: 700;
-        color: #2D2D2D;
+        color: var(--black);
       }
       .modal-content {
         padding: 0 0px;
@@ -56,7 +72,7 @@
       }
       #bottom-input-GCD, select {
         font-family: 'Robot', sans-serif;
-        font-size: 18px;
+        font-size: 16px;
         width: 55%;
         padding: 2px 14px;
         margin: 0;
@@ -91,90 +107,90 @@
         text-align: right;
       }
       .blue{
-        color: #4285F4;
+        color: var(--blue);
       }
       .green{
-        color: #0F9D58;
+        color: var(--green);
       }
       .yellow{
-        color: #F4B400;
+        color: var(--yellow);
       }
       .red{
-        color: #DB4437;
+        color: var(--red);
       }
       .btn-yellow{
-        color: #FFFFFF;
-        background-color: #F4B400;
+        color: var(--white);
+        background-color: var(--yellow);
         font-weight: 600;
       }
       .btn-yellow:hover{
-        color: #FFFFFF;
-        background-color: #d39b00;
+        color: var(--white);
+        background-color: var(--yellow-hover);
       }
       .btn-red{
-        color: #FFFFFF;
-        background-color: #DB4437;
+        color: var(--white);
+        background-color: var(--red);
         font-weight: 600;
       }
       .btn-red:hover{
-        color: #FFFFFF;
-        background-color: #bd3c30;
+        color: var(--white);
+        background-color: var(--red-hover);
       }
       .btn-gray{
-        color: #2D2D2D;
-        background-color: #D2D2D2;
+        color: var(--black);
+        background-color: var(--gray);
         font-weight: 600;
       }
       .btn-gray:hover{
-        color: #2D2D2D;
-        background-color: #bebebe;
+        color: var(--black);
+        background-color: var(--gray-hover);
       }
       .btn-green{
-        color: #FFFFFF;
-        background-color: #0F9D58;
+        color: var(--white);
+        background-color: var(--green);
         font-weight: 600;
       }
       .btn-green:hover{
-        color: #FFFFFF;
-        background-color: #0d8d4f;
+        color: var(--white);
+        background-color: var(--green-hover);
       }
       .btn-lightgray{
-        color: #2D2D2D;
-        background-color: #F1F1F1;
+        color: var(--black);
+        background-color: var(--lightgray);
         font-weight: 600;
       }
       .btn-lightgray:hover{
-        color: #2D2D2D;
-        background-color: #dad8d8;
+        color: var(--black);
+        background-color: var(--lightgray-hover);
       }
       .btn-blue{
-        color: #FFFFFF;
-        background-color: #4285F4;
+        color: var(--white);
+        background-color: var(--blue);
         font-weight: 700;
       }
       .btn-blue:hover{
-        color: #FFFFFF;
-        background-color: #3a76d6;
+        color: var(--white);
+        background-color: var(--blue-hover);
       }
       .btn-black{
-        background-color: #2D2D2D;
+        background-color: var(--black);
         font-weight: 700;
       }
       .blue:hover{
-        color: #FFFFFF;
-        background-color: #4285F4;
+        color: var(--white);
+        background-color: var(--blue);
       }
       .green:hover{
-        color: #FFFFFF;
-        background-color: #0F9D58;
+        color: var(--white);
+        background-color: var(--green);
       }
       .yellow:hover{
-        color: #FFFFFF;
-        background-color: #F4B400;
+        color: var(--white);
+        background-color: var(--yellow);
       }
       .red:hover{
-        color: #FFFFFF;
-        background-color: #DB4437;
+        color: var(--white);
+        background-color: var(--red);
       }
       .btn:focus,.btn:active {
         outline: none !important;
@@ -235,7 +251,7 @@
         <div class="row fifth align-items-center justify-content-center mb-3">
           <div class="col text-center"><button type="button" class="btn btn-green btn-block operator">^</button></div>
           <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">0</button></div>
-          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block decimal">.</button></div>
+          <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block plus-min">±</button></div>
           <div class="col text-center"><button type="button" class="btn btn-lightgray btn-block">Ans</button></div>
           <div class="col text-center"><button type="button" class="btn btn-blue btn-block equal">=</button></div>
         </div>
