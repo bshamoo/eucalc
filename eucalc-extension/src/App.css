@@ -1,0 +1,136 @@
+:root {
+  --black: #2d2d2d;
+  --gray: #d2d2d2;
+  --lightgray: #f1f1f1;
+  --white: #ffffff;
+  --blue: #4285f4;
+  --green: #0f9d58;
+  --yellow: #f4b400;
+  --red: #db4437;
+  --gray-hover: #bebebe;
+  --lightgray-hover: #dad8d8;
+  --blue-hover: #3a76d6;
+  --green-hover: #0d8d4f;
+  --yellow-hover: #d39b00;
+  --red-hover: #bd3c30;
+}
+html,
+body {
+  font-family: "Robot", sans-serif;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  min-width: 375px;
+}
+#title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+}
+#version {
+  font-weight: 500;
+}
+#top-ans,
+select {
+  font-family: "Robot", sans-serif;
+  font-size: 22px;
+  width: 100%;
+  padding: 8px 20px;
+  margin: 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: right;
+}
+.blue {
+  color: var(--blue);
+}
+.green {
+  color: var(--green);
+}
+.yellow {
+  color: var(--yellow);
+}
+.red {
+  color: var(--red);
+}
+.btn-yellow {
+  color: var(--white);
+  background-color: var(--yellow);
+  font-weight: 600;
+}
+.btn-yellow:hover {
+  color: var(--white);
+  background-color: var(--yellow-hover);
+}
+.btn-red {
+  color: var(--white);
+  background-color: var(--red);
+  font-weight: 600;
+}
+.btn-red:hover {
+  color: var(--white);
+  background-color: var(--red-hover);
+}
+.btn-gray {
+  color: var(--black);
+  background-color: var(--gray);
+  font-weight: 600;
+}
+.btn-gray:hover {
+  color: var(--black);
+  background-color: var(--gray-hover);
+}
+.btn-green {
+  color: var(--white);
+  background-color: var(--green);
+  font-weight: 600;
+}
+.btn-green:hover {
+  color: var(--white);
+  background-color: var(--green-hover);
+}
+.btn-lightgray {
+  color: var(--black);
+  background-color: var(--lightgray);
+  font-weight: 600;
+}
+.btn-lightgray:hover {
+  color: var(--black);
+  background-color: var(--lightgray-hover);
+}
+.btn-blue {
+  color: var(--white);
+  background-color: var(--blue);
+  font-weight: 700;
+}
+.btn-blue:hover {
+  color: var(--white);
+  background-color: var(--blue-hover);
+}
+.btn-black {
+  background-color: var(--black);
+  font-weight: 700;
+}
+.blue:hover {
+  color: var(--white);
+  background-color: var(--blue);
+}
+.green:hover {
+  color: var(--white);
+  background-color: var(--green);
+}
+.yellow:hover {
+  color: var(--white);
+  background-color: var(--yellow);
+}
+.red:hover {
+  color: var(--white);
+  background-color: var(--red);
+}
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
