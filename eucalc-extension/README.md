@@ -1,6 +1,6 @@
-# Project Title
+# EUCALC
 
-EUCALC - Perform simple arithmetic, Euclidean inspired math, and conversions -- all with integers.
+Perform simple arithmetic, Euclidean inspired math, and conversions -- all with integers.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
