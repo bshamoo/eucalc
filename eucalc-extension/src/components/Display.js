@@ -7,7 +7,7 @@ const Display = () => (
   <Container fluid className="my-3">
     <Row className="justify-content-center align-items-center">
       <Col>
-        <input type="text" id="top-ans" name="top-ans" placeholder="0" />
+        <input type="text" id="display" name="display" placeholder="0" />
       </Col>
     </Row>
   </Container>

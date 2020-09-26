@@ -30,7 +30,7 @@ body {
 #version {
   font-weight: 500;
 }
-#top-ans,
+#display,
 select {
   font-family: "Robot", sans-serif;
   font-size: 22px;
@@ -43,89 +43,93 @@ select {
   box-sizing: border-box;
   text-align: right;
 }
-.blue {
-  color: var(--blue);
-}
-.green {
-  color: var(--green);
-}
-.yellow {
-  color: var(--yellow);
-}
-.red {
-  color: var(--red);
-}
-.btn-yellow {
+#btn-yellow {
   color: var(--white);
   background-color: var(--yellow);
   font-weight: 600;
 }
-.btn-yellow:hover {
+#btn-yellow:hover {
   color: var(--white);
   background-color: var(--yellow-hover);
 }
-.btn-red {
+#btn-red {
   color: var(--white);
   background-color: var(--red);
   font-weight: 600;
 }
-.btn-red:hover {
+#btn-red:hover {
   color: var(--white);
   background-color: var(--red-hover);
 }
-.btn-gray {
+#btn-gray {
   color: var(--black);
   background-color: var(--gray);
   font-weight: 600;
 }
-.btn-gray:hover {
+#btn-gray:hover {
   color: var(--black);
   background-color: var(--gray-hover);
 }
-.btn-green {
+#btn-green {
   color: var(--white);
   background-color: var(--green);
   font-weight: 600;
 }
-.btn-green:hover {
+#btn-green:hover {
   color: var(--white);
   background-color: var(--green-hover);
 }
-.btn-lightgray {
+#btn-lightgray {
   color: var(--black);
   background-color: var(--lightgray);
   font-weight: 600;
 }
-.btn-lightgray:hover {
+#btn-lightgray:hover {
   color: var(--black);
   background-color: var(--lightgray-hover);
 }
-.btn-blue {
+#btn-blue {
   color: var(--white);
   background-color: var(--blue);
   font-weight: 700;
 }
-.btn-blue:hover {
+#btn-blue:hover {
   color: var(--white);
   background-color: var(--blue-hover);
 }
-.btn-black {
+#btn-GCD {
+  color: var(--blue);
   background-color: var(--black);
   font-weight: 700;
 }
-.blue:hover {
+#btn-FME {
+  color: var(--red);
+  background-color: var(--black);
+  font-weight: 700;
+}
+#btn-BIN {
+  color: var(--yellow);
+  background-color: var(--black);
+  font-weight: 700;
+}
+#btn-HEX {
+  color: var(--green);
+  background-color: var(--black);
+  font-weight: 700;
+}
+#btn-GCD:hover {
   color: var(--white);
   background-color: var(--blue);
 }
-.green:hover {
+#btn-HEX:hover {
   color: var(--white);
   background-color: var(--green);
 }
-.yellow:hover {
+#btn-BIN:hover {
   color: var(--white);
   background-color: var(--yellow);
 }
-.red:hover {
+#btn-FME:hover {
   color: var(--white);
   background-color: var(--red);
 }
@@ -134,3 +138,72 @@ select {
   outline: none !important;
   box-shadow: none;
 }
+hr {
+  display: block;
+  margin: 0;
+  border-style: inset;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/*
+<Row className="justify-content-center align-items-center mb-1" id="one">
+        {inputs[1].map((input) => (
+          <Operators
+            operator={input.operator}
+            color={input.color}
+            key={input.toString()}
+          />
+        ))}
+      </Row>
+      <Row className="justify-content-center align-items-center mb-1" id="two">
+        {inputs[2].map((input) => (
+          <Operators
+            operator={input.operator}
+            color={input.color}
+            key={input.toString()}
+          />
+        ))}
+      </Row>
+      <Row
+        className="justify-content-center align-items-center mb-1"
+        id="three"
+      >
+        {inputs[3].map((input) => (
+          <Operators
+            operator={input.operator}
+            color={input.color}
+            key={input.toString()}
+          />
+        ))}
+      </Row>
+      <Row className="justify-content-center align-items-center mb-1" id="four">
+        {inputs[4].map((input) => (
+          <Operators
+            operator={input.operator}
+            color={input.color}
+            key={input.toString()}
+          />
+        ))}
+      </Row>
+      <hr className="my-3"></hr>
+      <Row className="justify-content-center align-items-center mb-1" id="five">
+        {inputs[5].map((input) => (
+          <Operators
+            operator={input.operator}
+            color={input.color}
+            key={input.toString()}
+          />
+        ))}
+      </Row>
+      <Row className="justify-content-center align-items-center mb-1" id="six">
+        {inputs[6].map((input) => (
+          <Operators
+            operator={input.operator}
+            color={input.color}
+            key={input.toString()}
+          />
+        ))}
+      </Row>
+*/
