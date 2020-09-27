@@ -146,3 +146,45 @@ hr {
   border-radius: 4px;
   box-sizing: border-box;
 }
+.active {
+  opacity: 0;
+}
+#bottom-input-GCD,
+select {
+  font-family: "Robot", sans-serif;
+  font-size: 16px;
+  width: 55%;
+  padding: 2px 14px;
+  margin: 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#bottom-input-FME,
+select {
+  font-family: "Robot", sans-serif;
+  font-size: 16px;
+  width: 100%;
+  padding: 2px 2px;
+  margin: 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#bottom-ans,
+select {
+  font-family: "Robot", sans-serif;
+  font-size: 18px;
+  width: 72.5%;
+  padding: 2px 14px;
+  margin: 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: right;
+}

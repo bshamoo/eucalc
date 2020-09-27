@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Display = () => (
+const NumberDisplay = () => (
   <Container fluid className="my-3">
     <Row className="justify-content-center align-items-center">
       <Col>
@@ -13,4 +13,4 @@ const Display = () => (
   </Container>
 );
 
-export default Display;
+export default NumberDisplay;
