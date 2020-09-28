@@ -3,11 +3,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const NumberDisplay = () => (
+const NumberDisplay = (props) => (
   <Container fluid className="my-3">
     <Row className="justify-content-center align-items-center">
-      <Col>
-        <input type="text" id="display" name="display" placeholder="0" />
+      <Col className="text-right" id="display">
+        {props.value}
       </Col>
     </Row>
   </Container>

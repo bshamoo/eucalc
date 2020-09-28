@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import logo from "./eucalc16.png";
 
 const Header = () => (
-  <Container fluid className="mt-3">
+  <Container fluid className="my-3">
     <Row>
       <Col>
         <h6 id="title">

@@ -1,17 +1,17 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Operators from "./Operators";
+import Buttons from "./Buttons";
 
 const FunctionPad = () => {
   const inputs = [
     [
-      { operator: "GCD", color: "btn-GCD" },
-      { operator: "Fast Mod Exp", color: "btn-FME" },
+      { operator: "GCD", color: "btn-GCD", onclick: "" },
+      { operator: "Fast Mod Exp", color: "btn-FME", onclick: "" },
     ],
     [
-      { operator: "Int to Bin", color: "btn-BIN" },
-      { operator: "Int to Hex", color: "btn-HEX" },
+      { operator: "Int to Bin", color: "btn-BIN", onclick: "" },
+      { operator: "Int to Hex", color: "btn-HEX", onclick: "" },
     ],
   ];
 
@@ -23,9 +23,10 @@ const FunctionPad = () => {
           key={index}
         >
           {row.map((col) => (
-            <Operators
+            <Buttons
               operator={col.operator}
               color={col.color}
+              onclick={col.onclick}
               key={col.toString()}
             />
           ))}

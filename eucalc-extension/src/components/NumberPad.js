@@ -1,59 +1,96 @@
-import React from "react";
+import React, { useState } from "react";
+import { evaluate } from "mathjs";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Operators from "./Operators";
+import NumberDisplay from "./NumberDisplay";
+import Buttons from "./Buttons";
 
 const NumberPad = () => {
+  const [value, setValue] = useState("0");
+  const [prev, setPrev] = useState(null);
+
+  const handleButtonPress = (content) => () => {
+    const num = parseFloat(value);
+
+    if (content === "AC") {
+      setPrev(value);
+      setValue("0");
+      return;
+    }
+    if (content === "Ans") {
+      setValue(prev);
+      return;
+    }
+    if (content === "+") {
+      setValue(value + " + ");
+      return;
+    }
+
+    if (content === "=") {
+      setValue(evaluate(value));
+      return;
+    }
+
+    if (value === "0") {
+      setValue(parseFloat(num + content).toString());
+      return;
+    } else {
+      setValue((value + content).toString());
+      return;
+    }
+  };
+
   const inputs = [
     [
-      { operator: "AC", color: "btn-yellow" },
-      { operator: "(", color: "btn-red" },
-      { operator: ")", color: "btn-red" },
-      { operator: "!", color: "btn-red" },
-      { operator: "÷", color: "btn-gray" },
+      { operator: "AC", content: "AC", color: "btn-yellow", onclick: "" },
+      { operator: "(", content: "(", color: "btn-red", onclick: "" },
+      { operator: ")", content: ")", color: "btn-red", onclick: "" },
+      { operator: "!", content: "!", color: "btn-red", onclick: "" },
+      { operator: "÷", content: "÷", color: "btn-gray", onclick: "" },
     ],
     [
-      { operator: "%", color: "btn-green" },
-      { operator: "7", color: "btn-lightgray" },
-      { operator: "8", color: "btn-lightgray" },
-      { operator: "9", color: "btn-lightgray" },
-      { operator: "×", color: "btn-gray" },
+      { operator: "%", content: "%", color: "btn-green", onclick: "" },
+      { operator: "7", content: "7", color: "btn-lightgray", onclick: "" },
+      { operator: "8", content: "8", color: "btn-lightgray", onclick: "" },
+      { operator: "9", content: "9", color: "btn-lightgray", onclick: "" },
+      { operator: "×", content: "×", color: "btn-gray", onclick: "" },
     ],
     [
-      { operator: "//", color: "btn-green" },
-      { operator: "4", color: "btn-lightgray" },
-      { operator: "5", color: "btn-lightgray" },
-      { operator: "6", color: "btn-lightgray" },
-      { operator: "-", color: "btn-gray" },
+      { operator: "//", content: "//", color: "btn-green", onclick: "" },
+      { operator: "4", content: "4", color: "btn-lightgray", onclick: "" },
+      { operator: "5", content: "5", color: "btn-lightgray", onclick: "" },
+      { operator: "6", content: "6", color: "btn-lightgray", onclick: "" },
+      { operator: "-", content: "-", color: "btn-gray", onclick: "" },
     ],
     [
-      { operator: "√", color: "btn-green" },
-      { operator: "1", color: "btn-lightgray" },
-      { operator: "2", color: "btn-lightgray" },
-      { operator: "3", color: "btn-lightgray" },
-      { operator: "+", color: "btn-gray" },
+      { operator: "√", content: "√", color: "btn-green", onclick: "" },
+      { operator: "1", content: "1", color: "btn-lightgray", onclick: "" },
+      { operator: "2", content: "2", color: "btn-lightgray", onclick: "" },
+      { operator: "3", content: "3", color: "btn-lightgray", onclick: "" },
+      { operator: "+", content: "+", color: "btn-gray", onclick: "" },
     ],
     [
-      { operator: "^", color: "btn-green" },
-      { operator: "±", color: "btn-lightgray" },
-      { operator: "0", color: "btn-lightgray" },
-      { operator: "Ans", color: "btn-lightgray" },
-      { operator: "=", color: "btn-blue" },
+      { operator: "^", content: "^", color: "btn-green", onclick: "" },
+      { operator: "±", content: "±", color: "btn-lightgray", onclick: "" },
+      { operator: "0", content: "0", color: "btn-lightgray", onclick: "" },
+      { operator: "Ans", content: "Ans", color: "btn-lightgray", onclick: "" },
+      { operator: "=", content: "=", color: "btn-blue", onclick: "" },
     ],
   ];
 
   return (
     <Container fluid className="my-3">
+      <NumberDisplay value={value} />
       {inputs.map((row, index) => (
         <Row
           className="justify-content-center align-items-center mb-1"
           key={index}
         >
           {row.map((col) => (
-            <Operators
+            <Buttons
               operator={col.operator}
               color={col.color}
-              key={col.toString()}
+              onclick={handleButtonPress(col.content)}
             />
           ))}
         </Row>

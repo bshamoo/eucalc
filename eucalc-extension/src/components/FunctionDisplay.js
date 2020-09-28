@@ -5,9 +5,8 @@ import Col from "react-bootstrap/Col";
 
 const FunctionDisplay = () => (
   <Container fluid className="my-3">
-    ///// /////GCD
-    <Row className="justify-content-center align-items-center">
-      <Col>
+    <Row className="justify-content-center align-items-center my-3">
+      <Col className="text-center">
         <input
           type="text"
           id="bottom-input-GCD"
@@ -15,10 +14,10 @@ const FunctionDisplay = () => (
           placeholder="x"
         />
       </Col>
-      <Col>
-        <h6 class="input-text">mod</h6>
+      <Col className="text-center">
+        <h6 id="input-text">mod</h6>
       </Col>
-      <Col>
+      <Col className="text-center">
         <input
           type="text"
           id="bottom-input-GCD"
@@ -27,97 +26,22 @@ const FunctionDisplay = () => (
         />
       </Col>
     </Row>
-    <Row className="justify-content-center align-items-center">
-      <h6 class="input-text">=</h6>
-    </Row>
-    <Row className="justify-content-center align-items-center">
-      <Col>
-        <input
-          type="text"
-          id="bottom-ans"
-          name="bottom-ans"
-          placeholder="0"
-          disabled
-        />
-      </Col>
-    </Row>
-    <Row className="justify-content-center align-items-center">
-      <Col>
-        <button type="button" class="btn btn-gray">
-          Clear
+    <Row className="justify-content-center align-items-center my-3">
+      <Col className="text-center">
+        <button type="button" class="btn" id="btn-blue">
+          =
         </button>
       </Col>
     </Row>
-    ///// /////FME
-    <Row className="justify-content-center align-items-center">
-      <Col>
-        <input
-          type="text"
-          id="bottom-input-FME"
-          name="bottom-x"
-          placeholder="x"
-        />
-      </Col>
-      <Col>
-        <h6 class="input-text">^</h6>
-      </Col>
-      <Col>
-        <input
-          type="text"
-          id="bottom-input-FME"
-          name="bottom-e"
-          placeholder="e"
-        />
-      </Col>
-      <Col>
-        <h6 class="input-text">mod</h6>
-      </Col>
-      <Col>
-        <input
-          type="text"
-          id="bottom-input-FME"
-          name="bottom-y"
-          placeholder="y"
-        />
+    <Row className="justify-content-center align-items-center my-3">
+      <Col className="text-center">
+        <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
       </Col>
     </Row>
-    ///// ///// BIN
-    <Row className="justify-content-center align-items-center">
-      <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
-      <sub> 10</sub>
-    </Row>
-    <Row className="justify-content-center align-items-center">
-      <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
-      <sub> 2</sub>
-    </Row>
-    ///// ///// HEX
-    <Row className="justify-content-center align-items-center">
-      <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
-      <sub> 10</sub>
-    </Row>
-    <Row className="justify-content-center align-items-center">
-      <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
-      <sub> 16</sub>
-    </Row>
-    ///// ///// Answer
-    <Row className="justify-content-center align-items-center">
-      <h6 class="input-text">=</h6>
-    </Row>
-    <Row className="justify-content-center align-items-center">
-      <Col>
-        <input
-          type="text"
-          id="bottom-ans"
-          name="bottom-ans"
-          placeholder="0"
-          disabled
-        />
-      </Col>
-    </Row>
-    <Row className="justify-content-center align-items-center">
-      <Col>
-        <button type="button" class="btn btn-gray">
-          Clear
+    <Row className="justify-content-center align-items-center my-3">
+      <Col className="text-center">
+        <button type="button" class="btn" id="btn-gray">
+          Reset
         </button>
       </Col>
     </Row>

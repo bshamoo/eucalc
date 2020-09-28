@@ -30,18 +30,13 @@ body {
 #version {
   font-weight: 500;
 }
-#display,
-select {
+#display {
   font-family: "Robot", sans-serif;
   font-size: 22px;
-  width: 100%;
   padding: 8px 20px;
-  margin: 0;
   display: inline-block;
   border: 2px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
-  text-align: right;
 }
 #btn-yellow {
   color: var(--white);
@@ -188,3 +183,120 @@ select {
   box-sizing: border-box;
   text-align: right;
 }
+#input-text {
+  font-family: "Robot", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+}
+sub {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+/*
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <input
+          type="text"
+          id="bottom-input-FME"
+          name="bottom-x"
+          placeholder="x"
+        />
+      </Col>
+      <Col className="text-center">
+        <h6 id="input-text">^</h6>
+      </Col>
+      <Col className="text-center">
+        <input
+          type="text"
+          id="bottom-input-FME"
+          name="bottom-e"
+          placeholder="e"
+        />
+      </Col>
+      <Col className="text-center">
+        <h6 id="input-text">mod</h6>
+      </Col>
+      <Col className="text-center">
+        <input
+          type="text"
+          id="bottom-input-FME"
+          name="bottom-y"
+          placeholder="y"
+        />
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <button type="button" class="btn" id="btn-blue">
+          =
+        </button>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <button type="button" class="btn" id="btn-gray">
+          Reset
+        </button>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
+        <sub> 10</sub>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <button type="button" class="btn" id="btn-blue">
+          =
+        </button>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
+        <sub> 2</sub>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <button type="button" class="btn" id="btn-gray">
+          Reset
+        </button>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
+        <sub> 10</sub>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <button type="button" class="btn" id="btn-blue">
+          =
+        </button>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
+        <sub> 16</sub>
+      </Col>
+    </Row>
+    <Row className="justify-content-center align-items-center">
+      <Col className="text-center">
+        <button type="button" class="btn" id="btn-gray">
+          Reset
+        </button>
+      </Col>
+    </Row>
+  */
