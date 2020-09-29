@@ -1,19 +1,61 @@
 import React, { useState } from "react";
+// Import Bootstrap layout
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+// Import Components
 import Buttons from "./Buttons";
-import FunctionDisplay from "./FunctionDisplay";
+import LogicDisplay from "./LogicDisplay";
+import GCDDisplay from "./GCDDisplay";
+import FMEDisplay from "./FMEDisplay";
+import Int2BinDisplay from "./Int2BinDisplay";
+import Bin2IntDisplay from "./Bin2IntDisplay";
+import Int2HexDisplay from "./Int2HexDisplay";
+import Hex2IntDisplay from "./Hex2IntDisplay";
 
 const FunctionPad = () => {
   const [state, setState] = useState("");
+
   const functionPadHandler = (content) => () => {
-    if (content === "GCD") {
-      setState(content);
+    if (content === "Logic") {
+      setState(<LogicDisplay />);
       console.log(content);
-      return <FunctionDisplay state={state} />;
-    } else {
       return;
     }
+    if (content === "Bitwise") {
+      console.log(content);
+      return;
+    }
+    if (content === "GCD") {
+      setState(<GCDDisplay />);
+      console.log(content);
+      return;
+    }
+    if (content === "FastModExp") {
+      setState(<FMEDisplay />);
+      console.log(content);
+      return;
+    }
+    if (content === "Int to Bin") {
+      setState(<Int2BinDisplay />);
+      console.log(content);
+      return;
+    }
+    if (content === "Bin to Int") {
+      setState(<Bin2IntDisplay />);
+      console.log(content);
+      return;
+    }
+    if (content === "Int to Hex") {
+      setState(<Int2HexDisplay />);
+      console.log(content);
+      return;
+    }
+    if (content === "Hex to Int") {
+      setState(<Hex2IntDisplay />);
+      console.log(content);
+      return;
+    }
+    return;
   };
 
   const inputs = [
@@ -73,6 +115,7 @@ const FunctionPad = () => {
           ))}
         </Row>
       ))}
+      {state}
     </Container>
   );
 };

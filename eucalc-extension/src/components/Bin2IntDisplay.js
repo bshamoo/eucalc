@@ -3,44 +3,30 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const FunctionDisplay = () => (
+const Bin2IntDisplay = () => (
   <Container fluid className="my-3">
     <Row className="justify-content-center align-items-center my-3">
       <Col className="text-center">
-        <input
-          type="text"
-          id="bottom-input-GCD"
-          name="bottom-x"
-          placeholder="x"
-        />
-      </Col>
-      <Col className="text-center">
-        <h6 id="input-text">mod</h6>
-      </Col>
-      <Col className="text-center">
-        <input
-          type="text"
-          id="bottom-input-GCD"
-          name="bottom-y"
-          placeholder="y"
-        />
+        <input type="text" id="top-b2i" name="top-b2i" placeholder="0" />
+        <sub> 2</sub>
       </Col>
     </Row>
     <Row className="justify-content-center align-items-center my-3">
       <Col className="text-center">
-        <button type="button" class="btn" id="btn-blue">
+        <button type="button" className="btn" id="btn-blue">
           =
         </button>
       </Col>
     </Row>
     <Row className="justify-content-center align-items-center my-3">
       <Col className="text-center">
-        <input type="text" id="bottom-ans" name="bottom-ans" placeholder="0" />
+        <input type="text" id="bottom-b2i" name="bottom-b2i" placeholder="0" />
+        <sub> 10</sub>
       </Col>
     </Row>
     <Row className="justify-content-center align-items-center my-3">
       <Col className="text-center">
-        <button type="button" class="btn" id="btn-gray">
+        <button type="button" className="btn" id="btn-gray">
           Reset
         </button>
       </Col>
@@ -48,4 +34,4 @@ const FunctionDisplay = () => (
   </Container>
 );
 
-export default FunctionDisplay;
+export default Bin2IntDisplay;

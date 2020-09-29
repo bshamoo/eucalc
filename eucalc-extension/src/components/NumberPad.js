@@ -37,12 +37,12 @@ math.import(
 );
 
 const NumberPad = () => {
-  // End evaluated expression value
+  // Evaluated expression value
   const [value, setValue] = useState("0");
-  // Stores past evaluated expression in "Ans" button
+  // Stores previous evaluated expression in "Ans" button
   const [prev, setPrev] = useState("0");
   // Checks if an error is currently being displayed
-  const [err, setErr] = useState(false);
+  const [error, setError] = useState(false);
 
   const numberPadHandler = (content) => () => {
     const num = parseFloat(value);
@@ -50,12 +50,12 @@ const NumberPad = () => {
 
     // Function Operators
     if (content === "CE") {
-      setErr(false);
+      setError(false);
       setValue("0");
       return;
     }
     // Checks if error is currently displayed
-    if (err === false) {
+    if (error === false) {
       if (content === "Ans") {
         if (value === "0") {
           setValue(parseFloat(num + prev).toString());
@@ -71,7 +71,7 @@ const NumberPad = () => {
           // Divison by Zero Error Handling
           if (ans === "Infinity" || ans === "-Infinity") {
             setValue("DivisonbyZeroError: Invalid Dividend");
-            setErr(true);
+            setError(true);
             return;
           } else {
             setPrev(ans);
@@ -82,7 +82,7 @@ const NumberPad = () => {
           // NaN and Syntax Error Handling
         } catch (e) {
           setValue(`${e}`);
-          setErr(true);
+          setError(true);
           return;
         }
       }
@@ -167,6 +167,7 @@ const NumberPad = () => {
         return;
       }
     }
+    return;
   };
 
   // Button input matrix for mapping
