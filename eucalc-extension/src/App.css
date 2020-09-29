@@ -112,6 +112,15 @@ body {
   background-color: var(--black);
   font-weight: 700;
 }
+#btn-LOG {
+  color: var(--gray);
+  background-color: var(--black);
+  font-weight: 700;
+}
+#btn-LOG:hover {
+  color: var(--white);
+  background-color: var(--gray-hover);
+}
 #btn-GCD:hover {
   color: var(--white);
   background-color: var(--blue);

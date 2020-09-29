@@ -9,7 +9,7 @@ const Header = () => (
     <Row>
       <Col>
         <h6 id="title">
-          <img src={logo} alt="eucalc_icon16" class="icon" /> EUCALC{" "}
+          <img src={logo} alt="eucalc_icon16" className="icon" /> EUCALC{" "}
           <span id="version">(1.0.0)</span>
         </h6>
       </Col>

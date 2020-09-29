@@ -3,12 +3,13 @@ import Col from "react-bootstrap/Col";
 
 const Buttons = (props) => {
   return (
-    <Col className="text-center">
+    <Col className="text-center" key={props.key}>
       <button
         type="button"
         className="btn btn-block"
         id={props.color}
         onClick={props.onclick}
+        key={props.key}
       >
         {props.operator}
       </button>

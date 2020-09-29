@@ -1,17 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Buttons from "./Buttons";
+import FunctionDisplay from "./FunctionDisplay";
 
 const FunctionPad = () => {
+  const [state, setState] = useState("");
+  const functionPadHandler = (content) => () => {
+    if (content === "GCD") {
+      setState(content);
+      console.log(content);
+      return <FunctionDisplay state={state} />;
+    } else {
+      return;
+    }
+  };
+
   const inputs = [
     [
-      { operator: "GCD", color: "btn-GCD", onclick: "" },
-      { operator: "Fast Mod Exp", color: "btn-FME", onclick: "" },
+      { operator: "Logic", content: "Logic", color: "btn-GCD", id: "log" },
+      { operator: "Bitwise", content: "Bitwise", color: "btn-GCD", id: "bit" },
+      { operator: "GCD", content: "GCD", color: "btn-FME", id: "gcd" },
+      {
+        operator: "FastModExp",
+        content: "FastModExp",
+        color: "btn-FME",
+        id: "fme",
+      },
     ],
     [
-      { operator: "Int to Bin", color: "btn-BIN", onclick: "" },
-      { operator: "Int to Hex", color: "btn-HEX", onclick: "" },
+      {
+        operator: "Int to Bin",
+        content: "Int to Bin",
+        color: "btn-BIN",
+        id: "i2b",
+      },
+      {
+        operator: "Bin to Int",
+        content: "Bin to Int",
+        color: "btn-BIN",
+        id: "b2i",
+      },
+      {
+        operator: "Int to Hex",
+        content: "Int to Hex",
+        color: "btn-HEX",
+        id: "i2h",
+      },
+      {
+        operator: "Hex to Int",
+        content: "Hex to Int",
+        color: "btn-HEX",
+        id: "h2i",
+      },
     ],
   ];
 
@@ -26,8 +67,8 @@ const FunctionPad = () => {
             <Buttons
               operator={col.operator}
               color={col.color}
-              onclick={col.onclick}
-              key={col.toString()}
+              key={col.id}
+              onclick={functionPadHandler(col.content)}
             />
           ))}
         </Row>
