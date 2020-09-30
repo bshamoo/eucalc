@@ -28,7 +28,7 @@ const Int2HexDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              Number.isInteger(parseFloat(int)) & !isNaN(parseFloat(+int))
+              Number.isInteger(parseFloat(+int)) & !isNaN(parseFloat(+int))
                 ? setHex(parseInt(int).toString(16).toUpperCase())
                 : setHex("ValueError: Please enter an integer value")
             }

@@ -27,9 +27,10 @@ const Bin2IntDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              !isNaN(parseInt(bin, 2).toString())
+              !isNaN(parseInt(+bin, 2).toString()) &
+              Number.isInteger(parseFloat(+bin))
                 ? setInt(parseInt(bin, 2).toString())
-                : setInt("ValueError: Please enter a binary value")
+                : setInt("ValueError: Please enter a whole binary value")
             }
           >
             =

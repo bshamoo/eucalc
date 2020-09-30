@@ -1,18 +1,123 @@
-import React from "react";
+import React, { useState } from "react";
+// Import math.js functions
+import { create, all } from "mathjs";
+// Import Bootstrap Layout
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // Import Components
 import Buttons from "./Buttons";
 
+// Limited Eval: disabled vulnerable functions whilst still supporting most functionality
+const math = create(all);
+const limitedEvaluate = math.evaluate;
+
+math.import(
+  {
+    evaluate: function () {
+      throw new Error("Function evaluate is disabled");
+    },
+  },
+  { override: true }
+);
+
 const LogicDisplay = () => {
+  const [value, setValue] = useState("");
+  const [error, setError] = useState(false);
+
+  const logicPad = (content) => () => {
+    var ans = "";
+    // Function Operators
+    if (content === "CE") {
+      setError(false);
+      setValue("");
+      return;
+    }
+    // Checks if error is currently displayed
+    if (error === false) {
+      if (content === "=") {
+        try {
+          ans = limitedEvaluate(value);
+          setValue(ans);
+          console.log(ans);
+          return;
+        } catch (e) {
+          // NaN and Syntax Error Handling
+          setValue(`${e}`);
+          setError(true);
+          return;
+        }
+      }
+
+      // Parentheses and Decimal
+      if (content === "(") {
+        if (value === "") {
+          setValue("( ");
+          return;
+        } else {
+          setValue(value + " ( ");
+          return;
+        }
+      }
+      if (content === ")") {
+        if (value === "") {
+          setValue(" )");
+          return;
+        } else {
+          setValue(value + " ) ");
+          return;
+        }
+      }
+
+      if (content === "not") {
+        setValue(value + " not ");
+        return;
+      }
+
+      if (content === "and") {
+        if (value === "") {
+          return;
+        } else {
+          setValue(value + " and ");
+          return;
+        }
+      }
+      if (content === "or") {
+        if (value === "") {
+          return;
+        } else {
+          setValue(value + " or ");
+          return;
+        }
+      }
+      if (content === "xor") {
+        if (value === "") {
+          return;
+        } else {
+          setValue(value + " xor ");
+          return;
+        }
+      }
+
+      // Digit Concatenation
+      if (value === "") {
+        setValue(value + content);
+        return;
+      } else {
+        setValue(value + content);
+        return;
+      }
+    }
+    return;
+  };
+
   const inputs = [
     [
       { operator: "CE", content: "CE", color: "btn-yellow", id: "logic-clear" },
       { operator: "(", content: "(", color: "btn-red", id: "logic-lpara" },
       { operator: ")", content: ")", color: "btn-red", id: "logic-rpara" },
-      { operator: "p", content: "p", color: "btn-gray", id: "p" },
-      { operator: "q", content: "q", color: "btn-gray", id: "q" },
+      { operator: "true", content: "true", color: "btn-gray", id: "p" },
+      { operator: "false", content: "false", color: "btn-gray", id: "q" },
     ],
     [
       { operator: "not", content: "not", color: "btn-green", id: "not" },
@@ -29,9 +134,10 @@ const LogicDisplay = () => {
           <input
             type="text"
             id="logic-display"
-            name="logic-display"
+            value={value}
             placeholder="0"
             className="text-right"
+            disabled
           />
         </Col>
       </Row>
@@ -41,7 +147,12 @@ const LogicDisplay = () => {
           key={index}
         >
           {row.map((col) => (
-            <Buttons operator={col.operator} color={col.color} key={col.id} />
+            <Buttons
+              operator={col.operator}
+              color={col.color}
+              key={col.id}
+              onclick={logicPad(col.content)}
+            />
           ))}
         </Row>
       ))}

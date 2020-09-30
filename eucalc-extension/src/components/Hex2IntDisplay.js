@@ -6,6 +6,17 @@ import Col from "react-bootstrap/Col";
 const Hex2IntDisplay = () => {
   const [hex, setHex] = useState("");
   const [int, setInt] = useState("");
+
+  function isHex(val) {
+    const hexRegExp = /^[0-9a-fA-F]+$/;
+
+    if (hexRegExp.test(val)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   return (
     <Container fluid className="my-3">
       <Row className="justify-content-center align-items-center my-3">
@@ -27,7 +38,7 @@ const Hex2IntDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              !isNaN(parseInt(hex, 16).toString())
+              isHex(hex)
                 ? setInt(parseInt(hex, 16).toString())
                 : setInt("ValueError: Please enter a hexadecimal value")
             }
