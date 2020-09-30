@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 
 const Buttons = (props) => {
   return (
-    <Col className="text-center" key={props.key}>
+    <Col className="text-center">
       <button
         type="button"
         className="btn btn-block"
