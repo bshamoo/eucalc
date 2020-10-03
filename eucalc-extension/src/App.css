@@ -20,7 +20,7 @@ body {
   font-size: 12px;
   margin: 0;
   padding: 0;
-  min-width: 375px;
+  min-width: 495px;
 }
 #title {
   font-size: 18px;
@@ -167,7 +167,7 @@ hr {
 select {
   font-family: "Robot", sans-serif;
   font-size: 16px;
-  width: 60%;
+  width: 100%;
   padding: 2px 14px;
   margin: 0;
   display: inline-block;
@@ -195,6 +195,7 @@ select {
 #top-b2i,
 #top-i2h,
 #top-h2i,
+#top-prime,
 select {
   font-family: "Robot", sans-serif;
   font-size: 18px;
@@ -227,6 +228,7 @@ select {
 }
 #input-text {
   font-family: "Robot", sans-serif;
+  width: 100%;
   font-size: 16px;
   font-weight: 700;
   color: var(--black);

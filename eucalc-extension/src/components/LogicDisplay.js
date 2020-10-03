@@ -61,7 +61,7 @@ const LogicDisplay = () => {
       }
       if (content === ")") {
         if (value === "") {
-          setValue(" )");
+          setValue(") ");
           return;
         } else {
           setValue(value + " ) ");

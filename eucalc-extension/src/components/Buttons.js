@@ -1,4 +1,5 @@
 import React from "react";
+// Import Bootstrap Layout
 import Col from "react-bootstrap/Col";
 
 const Buttons = (props) => {

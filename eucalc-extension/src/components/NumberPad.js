@@ -29,7 +29,7 @@ const NumberPad = () => {
   // Checks if an error is currently being displayed
   const [error, setError] = useState(false);
 
-  const numberPadHandler = (content) => () => {
+  const numberPadActions = (content) => () => {
     const num = parseFloat(value);
     var ans = 0;
 
@@ -52,7 +52,7 @@ const NumberPad = () => {
       }
       if (content === "=") {
         try {
-          ans = round(limitedEvaluate(value), 6).toString();
+          ans = round(limitedEvaluate(value), 5).toString();
           // Divison by Zero Error Handling
           if (ans === "Infinity" || ans === "-Infinity") {
             setValue("ValueError: ± Infinity");
@@ -132,15 +132,18 @@ const NumberPad = () => {
           return;
         }
       }
-
-      // Euclidean Operators
       if (content === "%") {
         setValue(value + " % ");
         return;
       }
-      if (content === "//") {
-        setValue(value + " // ");
-        return;
+      if (content === "log") {
+        if (value === "0") {
+          setValue("log( ");
+          return;
+        } else {
+          setValue(value + " log( ");
+          return;
+        }
       }
 
       // Digit Concatenation
@@ -155,7 +158,7 @@ const NumberPad = () => {
     return;
   };
 
-  // Button input matrix for mapping
+  // Inputs for number button mapping
   const inputs = [
     [
       { operator: "CE", content: "CE", color: "btn-yellow", id: "clear" },
@@ -172,7 +175,7 @@ const NumberPad = () => {
       { operator: "×", content: "×", color: "btn-gray", id: "mult" },
     ],
     [
-      { operator: "//", content: "//", color: "btn-green", id: "int-div" },
+      { operator: "log", content: "log", color: "btn-green", id: "log" },
       { operator: "4", content: "4", color: "btn-lightgray", id: "4" },
       { operator: "5", content: "5", color: "btn-lightgray", id: "5" },
       { operator: "6", content: "6", color: "btn-lightgray", id: "6" },
@@ -206,7 +209,7 @@ const NumberPad = () => {
             <Buttons
               operator={col.operator}
               color={col.color}
-              onclick={numberPadHandler(col.content)}
+              onclick={numberPadActions(col.content)}
               key={col.id}
             />
           ))}

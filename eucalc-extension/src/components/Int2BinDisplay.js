@@ -4,8 +4,20 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+function isInt(val) {
+  const intRegExp = /^-?[0-9]+$/;
+
+  if (intRegExp.test(val)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const Int2BinDisplay = () => {
+  // Input Integer Value
   const [int, setInt] = useState("");
+  // Output Binary Value
   const [bin, setBin] = useState("");
 
   return (
@@ -16,7 +28,7 @@ const Int2BinDisplay = () => {
             type="text"
             id="top-i2b"
             value={int}
-            placeholder={"0"}
+            placeholder="0"
             onChange={(i) => setInt(i.currentTarget.value)}
           />
           <sub> 10</sub>
@@ -29,9 +41,9 @@ const Int2BinDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              Number.isInteger(parseFloat(+int))
+              isInt(int)
                 ? setBin((parseInt(int) >>> 0).toString(2))
-                : setBin("ValueError: Please enter an integer value")
+                : setBin('ValueError: Enter an integer value: ex ("78")')
             }
           >
             =

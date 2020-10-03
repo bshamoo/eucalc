@@ -1,10 +1,23 @@
 import React, { useState } from "react";
+// Import Bootstrap Layout
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+function isBin(val) {
+  const binRegExp = /^[0-1]+$/;
+
+  if (binRegExp.test(val)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const Bin2IntDisplay = () => {
+  // Input Binary Value
   const [bin, setBin] = useState("");
+  // Output Integer Value
   const [int, setInt] = useState("");
   return (
     <Container fluid className="my-3">
@@ -27,10 +40,9 @@ const Bin2IntDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              !isNaN(parseInt(+bin, 2).toString()) &
-              Number.isInteger(parseFloat(+bin))
+              isBin(bin)
                 ? setInt(parseInt(bin, 2).toString())
-                : setInt("ValueError: Please enter a whole binary value")
+                : setInt('ValueError: Enter a binary value: ex ("1001110")')
             }
           >
             =

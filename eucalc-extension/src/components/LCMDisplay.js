@@ -6,10 +6,10 @@ import Col from "react-bootstrap/Col";
 
 var numbers = require("numbers");
 
-const GCDDisplay = () => {
+const LCMDisplay = () => {
   const [leftValue, setLeftValue] = useState("");
   const [rightValue, setRightValue] = useState("");
-  const [gcd, setGCD] = useState("");
+  const [lcm, setLCM] = useState("");
 
   function isValidInt(x, y) {
     if (Number.isInteger(parseFloat(+x)) & Number.isInteger(parseFloat(+y))) {
@@ -23,7 +23,7 @@ const GCDDisplay = () => {
     <Container fluid className="my-3">
       <Row className="justify-content-center align-items-center my-3">
         <Col xs={1} className="text-center">
-          <h6 id="input-text">gcd(</h6>
+          <h6 id="input-text">lcm(</h6>
         </Col>
         <Col className="text-center">
           <input
@@ -58,8 +58,8 @@ const GCDDisplay = () => {
             id="btn-blue"
             onClick={() =>
               isValidInt(leftValue, rightValue)
-                ? setGCD(numbers.basic.gcd(leftValue, rightValue))
-                : setGCD("ValueError: Please enter two integer values")
+                ? setLCM(numbers.basic.lcm(leftValue, rightValue))
+                : setLCM("ValueError: Please enter two integer values")
             }
           >
             =
@@ -71,7 +71,7 @@ const GCDDisplay = () => {
           <input
             type="text"
             id="bottom-GCD"
-            value={gcd}
+            value={lcm}
             placeholder="0"
             disabled
           />
@@ -83,7 +83,7 @@ const GCDDisplay = () => {
             type="button"
             className="btn"
             id="btn-gray"
-            onClick={() => setLeftValue("") & setRightValue("") & setGCD("")}
+            onClick={() => setLeftValue("") & setRightValue("") & setLCM("")}
           >
             Reset
           </button>
@@ -93,4 +93,4 @@ const GCDDisplay = () => {
   );
 };
 
-export default GCDDisplay;
+export default LCMDisplay;

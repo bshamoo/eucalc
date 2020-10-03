@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+// Import Bootstrap Layout
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Hex2IntDisplay = () => {
-  const [hex, setHex] = useState("");
-  const [int, setInt] = useState("");
+var numbers = require("numbers");
 
-  function isHex(val) {
-    const hexRegExp = /^-?[0-9a-fA-F]+$/;
+const PrimeFactorsDisplay = () => {
+  const [value, setValue] = useState("");
+  const [prime, setPrime] = useState("");
 
-    if (hexRegExp.test(val)) {
+  function isValidInt(n) {
+    if (Number.isInteger(parseFloat(+n)) & (parseFloat(+n) > 0)) {
       return true;
     } else {
       return false;
@@ -23,12 +24,11 @@ const Hex2IntDisplay = () => {
         <Col className="text-center">
           <input
             type="text"
-            id="top-h2i"
-            value={hex}
-            placeholder="0"
-            onChange={(h) => setHex(h.currentTarget.value)}
+            id="top-prime"
+            value={value}
+            placeholder='Enter a positive integer value: ex ("78")'
+            onChange={(v) => setValue(v.currentTarget.value)}
           />
-          <sub> 16</sub>
         </Col>
       </Row>
       <Row className="justify-content-center align-items-center my-3">
@@ -38,9 +38,9 @@ const Hex2IntDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              isHex(hex)
-                ? setInt(parseInt(hex, 16).toString())
-                : setInt('ValueError: Enter a hexadecimal value: ex ("4E")')
+              isValidInt(value)
+                ? setPrime(numbers.prime.factorization(value).join(" × "))
+                : setPrime("ValueError: Please enter a positive integer value")
             }
           >
             =
@@ -51,12 +51,11 @@ const Hex2IntDisplay = () => {
         <Col className="text-center">
           <input
             type="text"
-            id="bottom-h2i"
-            value={int}
+            id="bottom-FME"
+            value={prime}
             placeholder="0"
             disabled
           />
-          <sub> 10</sub>
         </Col>
       </Row>
       <Row className="justify-content-center align-items-center my-3">
@@ -65,7 +64,7 @@ const Hex2IntDisplay = () => {
             type="button"
             className="btn"
             id="btn-gray"
-            onClick={() => setInt("") & setHex("")}
+            onClick={() => setValue("") & setPrime("")}
           >
             Reset
           </button>
@@ -74,4 +73,4 @@ const Hex2IntDisplay = () => {
     </Container>
   );
 };
-export default Hex2IntDisplay;
+export default PrimeFactorsDisplay;

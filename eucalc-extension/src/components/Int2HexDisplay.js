@@ -1,10 +1,23 @@
 import React, { useState } from "react";
+// Import Bootstrap Layout
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+function isInt(val) {
+  const intRegExp = /^-?[0-9]+$/;
+
+  if (intRegExp.test(val)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const Int2HexDisplay = () => {
+  // Input Integer Value
   const [int, setInt] = useState("");
+  // Output Hexidecimal Value
   const [hex, setHex] = useState("");
 
   return (
@@ -28,9 +41,9 @@ const Int2HexDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              Number.isInteger(parseFloat(+int)) & !isNaN(parseFloat(+int))
+              isInt(int)
                 ? setHex(parseInt(int).toString(16).toUpperCase())
-                : setHex("ValueError: Please enter an integer value")
+                : setHex('ValueError: Enter an integer value: ex ("78")')
             }
           >
             =

@@ -4,70 +4,77 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 // Import Components
 import Buttons from "./Buttons";
-import LogicDisplay from "./LogicDisplay";
-import GCDDisplay from "./GCDDisplay";
-import FMEDisplay from "./FMEDisplay";
-import Int2BinDisplay from "./Int2BinDisplay";
-import Bin2IntDisplay from "./Bin2IntDisplay";
-import Int2HexDisplay from "./Int2HexDisplay";
-import Hex2IntDisplay from "./Hex2IntDisplay";
+import Logic from "./LogicDisplay";
+import GCD from "./GCDDisplay";
+import LCM from "./LCMDisplay";
+import PrimeFactors from "./PrimeFactorsDisplay";
+import Int2Bin from "./Int2BinDisplay";
+import Bin2Int from "./Bin2IntDisplay";
+import Int2Hex from "./Int2HexDisplay";
+import Hex2Int from "./Hex2IntDisplay";
 
 const FunctionPad = () => {
-  const [state, setState] = useState("");
+  const [display, setDisplay] = useState("");
 
-  const functionPadHandler = (content) => () => {
+  const functionPadActions = (content) => () => {
+    // Logic Calculator
     if (content === "Logic") {
-      setState(<LogicDisplay />);
-      console.log(content);
+      setDisplay(<Logic />);
       return;
     }
-    if (content === "Bitwise") {
-      console.log(content);
-      return;
-    }
+
+    // Greatest Common Denominator
     if (content === "GCD") {
-      setState(<GCDDisplay />);
-      console.log(content);
+      setDisplay(<GCD />);
       return;
     }
-    if (content === "FastModExp") {
-      setState(<FMEDisplay />);
-      console.log(content);
+    // Least Common Multiple
+    if (content === "LCM") {
+      setDisplay(<LCM />);
       return;
     }
+    // Prime Factorization
+    if (content === "Prime Factor") {
+      setDisplay(<PrimeFactors />);
+      return;
+    }
+
+    // Conversion Functions
     if (content === "Int to Bin") {
-      setState(<Int2BinDisplay />);
-      console.log(content);
+      setDisplay(<Int2Bin />);
       return;
     }
     if (content === "Bin to Int") {
-      setState(<Bin2IntDisplay />);
-      console.log(content);
+      setDisplay(<Bin2Int />);
       return;
     }
     if (content === "Int to Hex") {
-      setState(<Int2HexDisplay />);
-      console.log(content);
+      setDisplay(<Int2Hex />);
       return;
     }
     if (content === "Hex to Int") {
-      setState(<Hex2IntDisplay />);
-      console.log(content);
+      setDisplay(<Hex2Int />);
       return;
     }
     return;
   };
 
+  // Inputs for function button mapping
   const inputs = [
     [
       { operator: "Logic", content: "Logic", color: "btn-GCD", id: "log" },
-      { operator: "Bitwise", content: "Bitwise", color: "btn-GCD", id: "bit" },
+      {
+        operator: "Prime Factor",
+        content: "Prime Factor",
+        color: "btn-GCD",
+        id: "prime",
+      },
       { operator: "GCD", content: "GCD", color: "btn-FME", id: "gcd" },
       {
-        operator: "FastModExp",
-        content: "FastModExp",
+        operator: "LCM",
+        content: "LCM",
         color: "btn-FME",
-        id: "fme",
+        id: "lcd",
       },
     ],
     [
@@ -110,12 +117,12 @@ const FunctionPad = () => {
               operator={col.operator}
               color={col.color}
               key={col.id}
-              onclick={functionPadHandler(col.content)}
+              onclick={functionPadActions(col.content)}
             />
           ))}
         </Row>
       ))}
-      {state}
+      {display}
     </Container>
   );
 };
