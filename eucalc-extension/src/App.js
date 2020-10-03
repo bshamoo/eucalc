@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Container fluid className="mx-2">
+      <Container fluid>
         <NumberPad />
         <hr className="my-3 mx-1"></hr>
         <FunctionPad />

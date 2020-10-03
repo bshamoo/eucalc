@@ -1,34 +1,25 @@
 {
   "short_name": "EUCALC",
-  "name": "EUCALC - A Euclidean Inspired Calculator",
+  "name": "EUCALC",
   "version": "1.0.0",
-  "icons": [
-    {
-      "src": "Images/eucalc16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "Images/eucalc32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "Images/eucalc48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "Images/eucalc128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    }
-  ],
+  "description": "Perform arithmetic, conversions, and Euclidean inspired math.",
   "content_security_policy": "script-src 'self' 'sha256-BjvwVND9/CHHpQeKUQT3TrrWwIoyrlkY8Z9ffgzZIw4='; object-src 'self'",
   "permissions": [],
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "index.html",
-    "default-title": "EUCALC"
+    "default-title": "EUCALC",
+    "default-icons": {
+      "16": "Images/eucalc16.png",
+      "32": "Images/eucalc32.png",
+      "48": "Images/eucalc48.png",
+      "128": "Images/eucalc128.png"
+    }
+  },
+  "icons": {
+    "16": "Images/eucalc16.png",
+    "32": "Images/eucalc32.png",
+    "48": "Images/eucalc48.png",
+    "128": "Images/eucalc128.png"
   }
 }
