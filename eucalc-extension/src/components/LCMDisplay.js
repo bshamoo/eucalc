@@ -4,26 +4,33 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// Import Numbers.js
 var numbers = require("numbers");
 
-const LCMDisplay = () => {
-  const [leftValue, setLeftValue] = useState("");
-  const [rightValue, setRightValue] = useState("");
-  const [lcm, setLCM] = useState("");
+// Checks for valid integer
+function isInt(x, y) {
+  const intRegExp = /^-?[0-9]+$/;
 
-  function isValidInt(x, y) {
-    if (Number.isInteger(parseFloat(+x)) & Number.isInteger(parseFloat(+y))) {
-      return true;
-    } else {
-      return false;
-    }
+  if (intRegExp.test(x) & intRegExp.test(y)) {
+    return true;
+  } else {
+    return false;
   }
+}
+
+const LCMDisplay = () => {
+  // Input Left Integer Value
+  const [leftValue, setLeftValue] = useState("");
+  // Input Right Integer Value
+  const [rightValue, setRightValue] = useState("");
+  // Output Least Common Multiple Value
+  const [lcm, setLCM] = useState("");
 
   return (
     <Container fluid className="my-3">
       <Row className="justify-content-center align-items-center my-3">
         <Col xs={1} className="text-center">
-          <h6 id="input-text">lcm(</h6>
+          <h6 id="input-text">lcm( </h6>
         </Col>
         <Col className="text-center">
           <input
@@ -57,7 +64,7 @@ const LCMDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              isValidInt(leftValue, rightValue)
+              isInt(leftValue, rightValue)
                 ? setLCM(numbers.basic.lcm(leftValue, rightValue))
                 : setLCM("ValueError: Please enter two integer values")
             }

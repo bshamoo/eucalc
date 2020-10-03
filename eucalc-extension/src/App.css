@@ -20,7 +20,7 @@ body {
   font-size: 12px;
   margin: 0;
   padding: 0;
-  min-width: 495px;
+  min-width: 430px;
 }
 #title {
   font-size: 18px;
@@ -37,12 +37,13 @@ body {
   display: inline-block;
   border: 2px solid #ccc;
   border-radius: 4px;
+  width: 100%;
 }
 #logic-display {
   font-family: "Robot", sans-serif;
   font-size: 18px;
   width: 100%;
-  padding: 4px 16px;
+  padding: 4px 12px;
   display: inline-block;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -159,9 +160,6 @@ hr {
   border-radius: 4px;
   box-sizing: border-box;
 }
-.active {
-  opacity: 0;
-}
 #top-x-GCD,
 #top-y-GCD,
 select {
@@ -169,21 +167,6 @@ select {
   font-size: 16px;
   width: 100%;
   padding: 2px 14px;
-  margin: 0;
-  display: inline-block;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  text-align: center;
-}
-#top-x-FME,
-#top-e-FME,
-#top-y-FME,
-select {
-  font-family: "Robot", sans-serif;
-  font-size: 16px;
-  width: 100%;
-  padding: 2px 2px;
   margin: 0;
   display: inline-block;
   border: 2px solid #ccc;

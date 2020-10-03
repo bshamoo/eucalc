@@ -1,6 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+// Import Bootstrap Layout
+import Container from "react-bootstrap/Container";
 //Import Components
 import Header from "./components/Header";
 import NumberPad from "./components/NumberPad";
@@ -10,8 +12,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <NumberPad />
-      <FunctionPad />
+      <Container fluid className="mx-2">
+        <NumberPad />
+        <hr className="my-3 mx-1"></hr>
+        <FunctionPad />
+      </Container>
     </div>
   );
 }

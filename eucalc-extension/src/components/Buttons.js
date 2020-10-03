@@ -4,13 +4,13 @@ import Col from "react-bootstrap/Col";
 
 const Buttons = (props) => {
   return (
-    <Col className="text-center">
+    <Col className="text-center px-1">
       <button
         type="button"
         className="btn btn-block"
         id={props.color}
         onClick={props.onclick}
-        key={props.key}
+        key={props.keyid}
       >
         {props.operator}
       </button>

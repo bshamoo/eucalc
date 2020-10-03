@@ -111,6 +111,7 @@ const LogicDisplay = () => {
     return;
   };
 
+  // Inputs for logic button mapping
   const inputs = [
     [
       { operator: "CE", content: "CE", color: "btn-yellow", id: "logic-clear" },
@@ -130,7 +131,7 @@ const LogicDisplay = () => {
   return (
     <Container fluid className="my-3">
       <Row className="justify-content-center align-items-center my-3">
-        <Col className="text-center">
+        <Col className="text-center px-1">
           <input
             type="text"
             id="logic-display"
@@ -146,11 +147,12 @@ const LogicDisplay = () => {
           className="justify-content-center align-items-center mb-1"
           key={index}
         >
-          {row.map((col) => (
+          {row.map((col, index) => (
             <Buttons
               operator={col.operator}
               color={col.color}
               key={col.id}
+              keyid={index}
               onclick={logicPad(col.content)}
             />
           ))}

@@ -4,19 +4,25 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// Import Numbers.js
 var numbers = require("numbers");
 
-const PrimeFactorsDisplay = () => {
-  const [value, setValue] = useState("");
-  const [prime, setPrime] = useState("");
+// Checks for valid integer
+function isInt(x) {
+  const intRegExp = /^[0-9]+$/;
 
-  function isValidInt(n) {
-    if (Number.isInteger(parseFloat(+n)) & (parseFloat(+n) > 0)) {
-      return true;
-    } else {
-      return false;
-    }
+  if (intRegExp.test(x)) {
+    return true;
+  } else {
+    return false;
   }
+}
+
+const PrimeFactorsDisplay = () => {
+  // Input Integer Value
+  const [value, setValue] = useState("");
+  // Output Prime Factorization
+  const [prime, setPrime] = useState("");
 
   return (
     <Container fluid className="my-3">
@@ -26,7 +32,7 @@ const PrimeFactorsDisplay = () => {
             type="text"
             id="top-prime"
             value={value}
-            placeholder='Enter a positive integer value: ex ("78")'
+            placeholder="0"
             onChange={(v) => setValue(v.currentTarget.value)}
           />
         </Col>
@@ -38,9 +44,9 @@ const PrimeFactorsDisplay = () => {
             className="btn"
             id="btn-blue"
             onClick={() =>
-              isValidInt(value)
+              isInt(value)
                 ? setPrime(numbers.prime.factorization(value).join(" × "))
-                : setPrime("ValueError: Please enter a positive integer value")
+                : setPrime('ValueError: Enter a positive integer value: "78"')
             }
           >
             =

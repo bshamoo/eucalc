@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// Checks for valid integer
 function isInt(val) {
   const intRegExp = /^-?[0-9]+$/;
 
@@ -43,7 +44,7 @@ const Int2HexDisplay = () => {
             onClick={() =>
               isInt(int)
                 ? setHex(parseInt(int).toString(16).toUpperCase())
-                : setHex('ValueError: Enter an integer value: ex ("78")')
+                : setHex('ValueError: Enter an integer value: "78"')
             }
           >
             =

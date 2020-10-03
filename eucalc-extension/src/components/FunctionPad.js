@@ -112,11 +112,12 @@ const FunctionPad = () => {
           className="justify-content-center align-items-center mb-1"
           key={index}
         >
-          {row.map((col) => (
+          {row.map((col, index) => (
             <Buttons
               operator={col.operator}
               color={col.color}
               key={col.id}
+              keyid={index}
               onclick={functionPadActions(col.content)}
             />
           ))}

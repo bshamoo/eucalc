@@ -1,21 +1,25 @@
 import React, { useState } from "react";
+// Import Bootstrap Layout
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Hex2IntDisplay = () => {
-  const [hex, setHex] = useState("");
-  const [int, setInt] = useState("");
+// Checks for valid hexadecimal
+function isHex(val) {
+  const hexRegExp = /^-?[0-9a-fA-F]+$/;
 
-  function isHex(val) {
-    const hexRegExp = /^-?[0-9a-fA-F]+$/;
-
-    if (hexRegExp.test(val)) {
-      return true;
-    } else {
-      return false;
-    }
+  if (hexRegExp.test(val)) {
+    return true;
+  } else {
+    return false;
   }
+}
+
+const Hex2IntDisplay = () => {
+  // Input Hexadecimal Value
+  const [hex, setHex] = useState("");
+  // Output Integer Value
+  const [int, setInt] = useState("");
 
   return (
     <Container fluid className="my-3">
@@ -40,7 +44,7 @@ const Hex2IntDisplay = () => {
             onClick={() =>
               isHex(hex)
                 ? setInt(parseInt(hex, 16).toString())
-                : setInt('ValueError: Enter a hexadecimal value: ex ("4E")')
+                : setInt('ValueError: Enter a hexadecimal value: "4E"')
             }
           >
             =

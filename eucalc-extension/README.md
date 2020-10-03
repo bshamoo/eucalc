@@ -1,12 +1,12 @@
 # EUCALC
 
-Perform simple arithmetic, Euclidean inspired math, and conversions -- all with integers.
+Perform simple arithmetic, Euclidean inspired math, and conversions with integers, binary, and hexadecimal.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run: App.js, App.css
 
 ### `npm start`
 

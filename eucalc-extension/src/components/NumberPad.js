@@ -205,17 +205,17 @@ const NumberPad = () => {
           className="justify-content-center align-items-center mb-1"
           key={index}
         >
-          {row.map((col) => (
+          {row.map((col, index) => (
             <Buttons
               operator={col.operator}
               color={col.color}
               onclick={numberPadActions(col.content)}
               key={col.id}
+              keyid={index}
             />
           ))}
         </Row>
       ))}
-      <hr className="my-3"></hr>
     </Container>
   );
 };

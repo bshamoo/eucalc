@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// Checks for valid binary
 function isBin(val) {
   const binRegExp = /^[0-1]+$/;
 
@@ -19,6 +20,7 @@ const Bin2IntDisplay = () => {
   const [bin, setBin] = useState("");
   // Output Integer Value
   const [int, setInt] = useState("");
+
   return (
     <Container fluid className="my-3">
       <Row className="justify-content-center align-items-center my-3">
@@ -42,7 +44,7 @@ const Bin2IntDisplay = () => {
             onClick={() =>
               isBin(bin)
                 ? setInt(parseInt(bin, 2).toString())
-                : setInt('ValueError: Enter a binary value: ex ("1001110")')
+                : setInt('ValueError: Enter a binary value: "1001110"')
             }
           >
             =
