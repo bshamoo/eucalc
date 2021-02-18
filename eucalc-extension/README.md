@@ -3,6 +3,8 @@
 Perform simple arithmetic, Euclidean inspired math, and conversions with integers, binary, and hexadecimal.
 EUCALC provides users the ability to evaluate equations, calculate conversions, and perform integer property functions all within the Google Chrome browser.
 
+Download Here: https://chrome.google.com/webstore/detail/eucalc/nbeldnpgphojhakeikhppcfdkaajblgj
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Include Features
