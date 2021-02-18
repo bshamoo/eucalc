@@ -1,72 +1,61 @@
 # EUCALC
 
 Perform simple arithmetic, Euclidean inspired math, and conversions with integers, binary, and hexadecimal.
+EUCALC provides users the ability to evaluate equations, calculate conversions, and perform integer property functions all within the Google Chrome browser.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Include Features
 
-In the project directory, you can run: App.js, App.css
+----- Number Pad ---------------------------------------------------
+---------- Digit Number Pad [0-9], Decimal (.)
+---------- Add (+), Subtract (-), Multiply (×), Divide (÷) 
+---------- Modulo (%), Base 10 Logarithm (log), Factorial (!), Exponent (^)
+---------- Left and Right Parenthesis ( )
+---------- Clear (CE), Answer (Ans), Equals (=)
 
-### `npm start`
+------------------------------------------------------------------------------
+----- Function Pad --------------------------------------------------
+---------- Logic Calculator (Logic)
+--------------- Boolean Value Pad (true, false)
+--------------- Boolean Operators (not, and, or, xor)
+--------------- Left and Right Parenthesis ( )
+--------------- Clear (CE), Equals (=)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---------- Prime Factorization (Prime Factor)
+--------------- Input: A positive integer value: ex: "78"
+--------------- Output: The prime factorization of inputted integer
+--------------- Reset (Reset), Equals (=)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---------- Greatest Common Denominator (GCD)
+--------------- X-Input, Y-Input: An integer value: ex: "78"
+--------------- Output: The GCD of the two inputted integer values
+--------------- Reset (Reset), Equals (=)
 
-### `npm test`
+---------- Least Common Multiple (LCM)
+--------------- X-Input, Y-Input: An integer value: ex: "78"
+--------------- Output: The LCM of the two inputted integer values
+--------------- Reset (Reset), Equals (=)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---------- Integer to Binary Conversion (Int to Bin)
+--------------- Input: An integer value: ex: "78"
+--------------- Output: The binary value equal to the inputted integer value
+-------------------- *** Signed integers are evaluated in two's complement binary form ***
+--------------- Reset (Reset), Equals (=)
 
-### `npm run build`
+---------- Binary to Integer Conversion (Bin to Int)
+--------------- Input: A binary value: ex: "1001110"
+--------------- Output: The integer value equal to the inputted binary value
+-------------------- *** Binary conversion only works for unsigned values ***
+--------------- Reset (Reset), Equals (=)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---------- Integer to Hexadecimal Conversion (Int to Hex)
+--------------- Input: An integer value: ex: "78"
+--------------- Output: The hexadecimal value equal to the inputted integer value
+--------------- Reset (Reset), Equals (=)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---------- Hexadecimal to Integer Conversion (Hex to Int)
+--------------- Input: A hexadecimal value: ex: "4E"
+--------------- Output: The integer value equal to the inputted hexadecimal value
+--------------- Reset (Reset), Equals (=)
+------------------------------------------------------------------------------
